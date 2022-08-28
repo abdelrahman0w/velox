@@ -1,0 +1,15 @@
+<div class="all-products">
+  <div class="card product" *ngFor="let product of allProducts">
+    <img class="card-img-top" [src]="product.image" alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+      <span class="product-price">{{ product.price}} $</span>
+      <p class="product-category btn btn-outline-success">{{ product.category }}</p>
+      <br>
+      <a href="#" class="btn btn-primary btn-block">Buy Now</a>
+    </div>
+  </div>
+</div>

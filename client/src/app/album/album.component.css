@@ -1,0 +1,28 @@
+.all-products {
+  width: 90%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 25px;
+}
+.product-price {
+  background-color: #333;
+  color: #eee;
+  font-weight: bold;
+  padding: 5px 3px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  display: block;
+  width: 80px;
+  text-align: center;
+}
+.product-category {
+  border-radius: 60px;
+  cursor:default;
+  text-transform: capitalize;
+}
+.product {
+  background-color: #fcfafa;
+  border-radius: 15px;
+  padding: 10px;
+}
