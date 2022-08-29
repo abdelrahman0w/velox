@@ -9,8 +9,9 @@ const schema = mongoose.Schema({
     category: { type: String, required: true },
     rating: {
         type: Map,
-        of: Number,
-    }
-});
+        of: Number}
+    }, 
+    {timestamps: true} 
+);
 
-module.exports = mongoose.model('product', schema);
+module.exports = mongoose.model('Product', schema);

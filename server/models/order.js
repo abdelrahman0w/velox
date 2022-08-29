@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema({
-});
+const schema = mongoose.Schema(
+    {
+    },
+    { timestamps: true }
+);
 
-module.exports = mongoose.model('order', schema);
+module.exports = mongoose.model('Order', schema);

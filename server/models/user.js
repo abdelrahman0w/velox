@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema({
-});
+const schema = mongoose.Schema(
+    {
+    },
+    { timestamps: true }
+);
 
-module.exports = mongoose.model('user', schema);
+module.exports = mongoose.model('User', schema);
