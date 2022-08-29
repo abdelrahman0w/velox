@@ -9,4 +9,4 @@ import { AlbumComponent } from '../album/album.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
