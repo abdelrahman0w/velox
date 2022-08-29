@@ -1,3 +1,13 @@
 :root {
-    --main-bg-color: brown;
+    --black: #252525;
+    --white: #e7e7e7;
+    --red: #F24444;
+    --lighter-red: #F26666;
+    --yellow: #F2B441;
+    --orange: #FF9800;
+    --green: #03A64A;
+    --lighter-green: #04BF68;
+    --navy: #263248;
+    --dark-blue: #123C73;
+    --light-blue: #1462A6;
 }
