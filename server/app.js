@@ -20,9 +20,11 @@ async function connectDB() {
 }
 // connectDB();
 
+const endpoint = '/'
+
 var indexRouter = require('./routes/index');
 
-app.use('/', indexRouter);
+app.use(endpoint, indexRouter);
 
 module.exports = app;
 
