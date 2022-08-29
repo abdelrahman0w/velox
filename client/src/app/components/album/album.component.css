@@ -5,6 +5,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 25px;
 }
+
 .product-price {
   background-color: #333;
   color: #eee;
@@ -16,11 +17,13 @@
   width: 80px;
   text-align: center;
 }
+
 .product-category {
   border-radius: 60px;
-  cursor:default;
+  cursor: default;
   text-transform: capitalize;
 }
+
 .product {
   background-color: #fcfafa;
   border-radius: 15px;
