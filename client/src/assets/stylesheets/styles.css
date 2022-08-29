@@ -1,3 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import 'material-icons/iconfont/material-icons.css';
 @import "./variables/colors.css";
+@import "./variables/fonts.css";
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}

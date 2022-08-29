@@ -5,23 +5,34 @@
         <div class="card text-center">
           <div class="labels">
             <span class="discount" *ngIf="!product.new && product.discount">
-              %{{ product.discount }} OFF
+              <span class="material-icons align-middle fs-6">
+                discount
+              </span>
+              <span class="align-middle"> %{{ product.discount }} OFF</span>
             </span>
-            <span class="discount" *ngIf="product.new && product.discount" style="left: 3rem;">
-              %{{ product.discount }} OFF
+            <span class="discount" *ngIf="product.new && product.discount" style="left: 4.3rem;">
+              <span class="material-icons align-middle fs-6">
+                discount
+              </span>
+              <span class="align-middle"> %{{ product.discount }} OFF</span>
             </span>
-            <span class="new" *ngIf="product.new">NEW</span>
+            <span class="new" *ngIf="product.new">
+              <span class="material-icons align-middle fs-6">
+                add_circle
+              </span>
+              <span class="align-middle"> NEW</span>
+            </span>
           </div>
           <div class="card-body">
             <img class="card-img img-fluid prod-img" [src]="product.image" />
           </div>
           <div class="card-body mt-3">
             <h5 class="card-title" title="{{ product.title }}">
-              {{ (product.title.length>29) ? (product.title | slice:0:29) + '..' : (product.title) }}
+              {{ (product.title.length>27) ? (product.title | slice:0:27) + '..' : (product.title) }}
             </h5>
             <hr>
             <div class="d-flex justify-content-center mb-3" *ngIf="!product.discount">
-              <h5 class="card-text">
+              <h5 class="card-text price">
                 ${{ product.price }}
               </h5>
             </div>
@@ -36,9 +47,24 @@
               </h5>
             </div>
             <div class="d-flex justify-content-center">
-              <a class="btn btn-primary btn-block btn-wish me-3">Add to Wish List</a>
-              <a class="btn btn-primary btn-block disabled" *ngIf="product.qty === 0">Add to Cart</a>
-              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0">Add to Cart</a>
+              <a class="btn btn-primary btn-block btn-wish me-3">
+                <span class="material-icons-outlined align-middle fs-5">
+                  favorite_border
+                </span>
+                <span class="align-middle"> Add to Wishlist</span>
+              </a>
+              <a class="btn btn-primary btn-block disabled" *ngIf="product.qty === 0">
+                <span class="material-icons-outlined align-middle fs-5">
+                  add_shopping_cart
+                </span>
+                <span class="align-middle"> Add to Cart</span>
+              </a>
+              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0">
+                <span class="material-icons-outlined align-middle fs-5">
+                  add_shopping_cart
+                </span>
+                <span class="align-middle"> Add to Cart</span>
+              </a>
             </div>
           </div>
         </div>
