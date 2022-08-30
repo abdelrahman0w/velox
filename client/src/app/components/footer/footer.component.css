@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.footer{
+  background-color: var(--white);
+  padding: 50px;
+  height: 350px;
+}
+.footer .logo img{
+  width: 100%;
+}
+.links {
+  width: 30%;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.links a{
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+}
+.logo{
+  margin: 20px auto;
+  width: 20%;
+}
+.icons {
+  margin: 0 auto 20px;
+  width: 30%;
+  text-align: center;
+}
+.icons a{
+  color: var(--dark-blue);
+  margin-right: 8px;
+}
+.cp{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 50px;
+}
