@@ -7,12 +7,16 @@ dotenv.config({
 });
 
 mongoose.connect(
-    process.env.MONGO_URI, {
-    useNewUrlParser: true,
-})
-    .then(() => {
-        console.log('\u001b[' + 34 + 'm' + 'DB CONNECTED!' + '\u001b[0m')
-})
-    .catch(err => { console.log(err); });
+    process.env.MONGO_URI,
+    {
+        useNewUrlParser: true,
+    }
+).then(() => {
+    console.log('\u001b[' + 34 + 'm' + 'DB CONNECTED!' + '\u001b[0m')
+}).catch(
+    err => {
+        console.log(err);
+    }
+);
 
 // module.exports = mongo;
