@@ -29,7 +29,7 @@
           </div>
           <div class="card-body mt-3">
             <h5 class="card-title" title="{{ product.title }}">
-              {{ (product.title.length>27) ? (product.title | slice:0:27) + '..' : (product.title) }}
+              {{ (product.title.length>27) ? (product.title | slice:0:27) + '...' : (product.title) }}
             </h5>
             <hr>
             <div class="d-flex justify-content-center mb-3" *ngIf="!product.discount">
