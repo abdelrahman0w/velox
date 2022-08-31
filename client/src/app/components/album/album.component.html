@@ -1,3 +1,4 @@
+<app-cart [items]="items"></app-cart>
 <div class="album py-5">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -55,15 +56,15 @@
               </a>
               <a class="btn btn-primary btn-block disabled" *ngIf="product.qty === 0">
                 <span class="material-icons-outlined align-middle fs-5">
-                  add_shopping_cart
+                  shopping_cart
                 </span>
                 <span class="align-middle"> Add to Cart</span>
               </a>
               <a class="btn btn-primary btn-block" *ngIf="product.qty > 0">
                 <span class="material-icons-outlined align-middle fs-5">
-                  add_shopping_cart
+                  shopping_cart
                 </span>
-                <span class="align-middle"> Add to Cart</span>
+                <span class="align-middle" (click)="decQuantity(product.id)"> Add to Cart</span>
               </a>
             </div>
           </div>

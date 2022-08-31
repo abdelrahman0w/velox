@@ -118,4 +118,10 @@ export class AlbumComponent implements OnInit {
       },
     },
   ];
+  items = 0;
+  decQuantity(id: number) {
+    var foundIndex = this.allProducts.findIndex(prod => prod.id == id);
+    this.allProducts[foundIndex].qty--;
+    this.items++;
+  }
 }
