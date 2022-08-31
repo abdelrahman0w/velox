@@ -1,0 +1,18 @@
+.footer {
+  background-color: var(--white);
+}
+
+.footer .logo img {
+  height: auto;
+  width: 35vh;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.social-icons a {
+  color: var(--black);
+}
