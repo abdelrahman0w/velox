@@ -1,0 +1,8 @@
+.ico {
+    color: var(--yellow);
+}
+
+.text {
+    color: var(--black);
+    font-weight: 500;
+}

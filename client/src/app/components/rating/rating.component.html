@@ -1,0 +1,9 @@
+<div class="rating text-center">
+    <span class="material-icons-outlined align-middle ico" *ngFor="let ratingId of ratingArr; index as i"
+        [id]="'star_'+i">
+        {{ showIcon(i) }}
+    </span>
+    <span class="text align-middle">
+        <small> {{numRatings}} Reviews - ({{ rating | number: '1.1-1' }} / 5)</small>
+    </span>
+</div>
