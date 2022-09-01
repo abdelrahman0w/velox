@@ -1,0 +1,56 @@
+{
+    "projectName": "velox",
+    "contributors": [
+        {
+            "login": "MariaGamal",
+            "name": "Maria Gamal",
+            "avatar_url": "https://avatars.githubusercontent.com/u/69156891",
+            "profile": "https://github.com/MariaGamal"
+        },
+        {
+            "login": "Basmala-123",
+            "name": "Basmala Ebrahim",
+            "avatar_url": "https://avatars.githubusercontent.com/u/82044606",
+            "profile": "https://github.com/Basmala-123"
+        },
+        {
+            "login": "engnadaahmed",
+            "name": "Nada Ahmed",
+            "avatar_url": "https://avatars.githubusercontent.com/u/101208299",
+            "profile": "https://github.com/engnadaahmed"
+        },
+        {
+            "login": "AhmedBedeir",
+            "name": "Ahmed Bedir",
+            "avatar_url": "https://avatars.githubusercontent.com/u/66643588",
+            "profile": "https://github.com/AhmedBedeir"
+        },
+        {
+            "login": "MoAref79",
+            "name": "Mohamed Aref",
+            "avatar_url": "https://avatars.githubusercontent.com/u/112208369",
+            "profile": "https://github.com/MoAref79"
+        },
+        {
+            "login": "ahmedeid101",
+            "name": "Ahmed Eid",
+            "avatar_url": "https://avatars.githubusercontent.com/u/69246416",
+            "profile": "https://github.com/ahmedeid101"
+        },
+        {
+            "login": "BahaaDagher",
+            "name": "Bahaa Dagher",
+            "avatar_url": "https://avatars.githubusercontent.com/u/108284328",
+            "profile": "https://github.com/BahaaDagher"
+        },
+        {
+            "login": "Abdelrahman0W",
+            "name": "Abdelrahman Wael",
+            "avatar_url": "https://avatars.githubusercontent.com/u/20213927",
+            "profile": "https://github.com/Abdelrahman0W"
+        }
+    ],
+    "repoType": "github",
+    "contributorsPerLine": 6,
+    "repoHost": "https://github.com"
+}
