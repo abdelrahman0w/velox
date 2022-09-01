@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import { AlbumComponent } from '../components/album/album.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { FooterComponent } from '../components/footer/footer.component';
-import { CarouselComponent } from '../components/carousel/carousel.component';
-import { ProductComponent } from '../components/product/product.component';
 import { RatingComponent } from '../components/rating/rating.component';
+import { ProductComponent } from '../components/product/product.component';
+import { CarouselComponent } from '../components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { RatingComponent } from '../components/rating/rating.component';
     CartComponent,
     FooterComponent,
     RatingComponent,
-    ProductComponent, 
+    ProductComponent,
     CarouselComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
