@@ -19,6 +19,8 @@
   - [Dependencies](#dependencies)
   - [Installation](#installation)
   - [Usage](#usage)
+    - [Run Server](#run-server)
+    - [Run Client](#run-client)
   - [Database](#database)
   - [Used Stack](#used-stack)
   - [Contributors](#contributors)
