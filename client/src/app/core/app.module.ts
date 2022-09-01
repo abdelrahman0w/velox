@@ -7,6 +7,7 @@ import { CartComponent } from '../components/cart/cart.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { RatingComponent } from '../components/rating/rating.component';
 import { ProductComponent } from '../components/product/product.component';
+import { CarouselComponent } from '../components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductComponent } from '../components/product/product.component';
     CartComponent,
     FooterComponent,
     RatingComponent,
-    ProductComponent
+    ProductComponent,
+    CarouselComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
