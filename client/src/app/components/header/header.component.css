@@ -1,0 +1,16 @@
+.header {
+    background-color: var(--white);
+  }
+
+.button {
+    background-color: var(--green);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
