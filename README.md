@@ -108,6 +108,6 @@ To use your database, do the following:
 
 ## Contributors
 
-|<img src="https://avatars.githubusercontent.com/u/69156891">|<img src="https://avatars.githubusercontent.com/u/82044606">|<img src="https://avatars.githubusercontent.com/u/101208299">|<img src="https://avatars.githubusercontent.com/u/66643588">|<img src="https://avatars.githubusercontent.com/u/112208369">|<img src="https://avatars.githubusercontent.com/u/69246416">|<img src="https://avatars.githubusercontent.com/u/108284328">|<img src="https://avatars.githubusercontent.com/u/20213927">|
+|<img src="https://avatars.githubusercontent.com/u/69156891" width="55px" height="55px">|<img src="https://avatars.githubusercontent.com/u/82044606" width="55px" height="55px">|<img src="https://avatars.githubusercontent.com/u/101208299" width="55px" height="55px">|<img src="https://avatars.githubusercontent.com/u/66643588" width="55px" height="55px">|<img src="https://avatars.githubusercontent.com/u/112208369" width="55px" height="55px">|<img src="https://avatars.githubusercontent.com/u/69246416" width="55px" height="55px">|<img src="https://avatars.githubusercontent.com/u/108284328" width="55px" height="55px">|<img src="https://avatars.githubusercontent.com/u/20213927" width="55px" height="55px">|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |Maria Gamal|Basmala Ebrahim|Nada Ahmed|Ahmed Bedir|Mohamed Aref|Ahmed Eid|Bahaa Mohamed|Abdelrahman Wael|
