@@ -5,11 +5,18 @@ import { AppComponent } from './app.component';
 import { AlbumComponent } from '../components/album/album.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { FooterComponent } from '../components/footer/footer.component';
-import { ProductComponent } from '../components/product/product.component';
 import { RatingComponent } from '../components/rating/rating.component';
+import { ProductComponent } from '../components/product/product.component';
 
 @NgModule({
-  declarations: [AppComponent, AlbumComponent, CartComponent, FooterComponent, ProductComponent, RatingComponent],
+  declarations: [
+    AppComponent,
+    AlbumComponent,
+    CartComponent,
+    FooterComponent,
+    RatingComponent,
+    ProductComponent
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
