@@ -9,6 +9,7 @@ import { RatingComponent } from '../components/rating/rating.component';
 import { ProductComponent } from '../components/product/product.component';
 import { CarouselComponent } from '../components/carousel/carousel.component';
 import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
+import { HeaderComponent } from '../components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
     RatingComponent,
     ProductComponent,
     CarouselComponent,
-    CrumbNavComponent
+    CrumbNavComponent,
+    HeaderComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
