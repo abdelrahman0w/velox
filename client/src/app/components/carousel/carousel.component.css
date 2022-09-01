@@ -29,10 +29,6 @@
 
 .btn:hover {
     box-shadow: inset 0px 0px 0px 1px var(--white);
-    background-color: var(--black);
+    background-color: var(--green);
     color: var(--white);
-}
-
-.carousel-img {
-    filter: brightness(65%)
 }
