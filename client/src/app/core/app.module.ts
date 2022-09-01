@@ -7,7 +7,7 @@ import { CartComponent } from '../components/cart/cart.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { RatingComponent } from '../components/rating/rating.component';
 import { ProductComponent } from '../components/product/product.component';
-
+import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,10 +15,11 @@ import { ProductComponent } from '../components/product/product.component';
     CartComponent,
     FooterComponent,
     RatingComponent,
-    ProductComponent
+    ProductComponent,
+    CrumbNavComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
