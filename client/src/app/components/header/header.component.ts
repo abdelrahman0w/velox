@@ -12,7 +12,9 @@ export class HeaderComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-  @Input() items: number = 0;
+  @Input() cart: number = 0;
+
+  @Input() wish: number = 0;
 
   ngOnChanges(): void {
   }
