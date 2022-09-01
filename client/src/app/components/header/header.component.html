@@ -1,17 +1,33 @@
+<nav class="navbar sticky-top d-flex justify-content-between">
   <div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3  ">
-
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
-      </ul>
-
-      <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button type="button" class="button">Sign-up</button>
-      </div>
-    </header>
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/full-logo.svg" alt="logo" width="155vh">
+    </a>
+    <form class="d-flex" role="search">
+      <input class="form-control shadow-none me-2" type="search" placeholder="Search..." aria-label="Search">
+      <button class="btn btn-search">Search</button>
+    </form>
+    <ul class="nav navbar-nav flex-row">
+      <li class="nav-item me-3">
+        <a class="btn btn-register" href="#">
+          Register
+        </a>
+      </li>
+      <li class="nav-item me-3">
+        <a class="btn btn-login" href="#">
+          Login
+        </a>
+      </li>
+      <li class="nav-item me-3">
+        <a class="" href="#">
+          <app-cart [items]="items"></app-cart>
+        </a>
+      </li>
+      <!-- <li class="nav-item me-3">
+        <a class="" href="#">
+          <app-cart [items]="0"></app-cart>
+        </a>
+      </li> -->
+    </ul>
   </div>
+</nav>

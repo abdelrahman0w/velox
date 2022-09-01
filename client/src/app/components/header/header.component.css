@@ -1,16 +1,57 @@
-.header {
-    background-color: var(--white);
-  }
+* {
+  border-radius: 0;
+}
 
-.button {
-    background-color: var(--green);
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 2px 2px;
-    cursor: pointer;
+.navbar {
+  background-color: var(--white);
+}
+
+.btn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.btn-search {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px var(--black);
+  color: var(--black)
+}
+
+.btn-search:hover {
+  color: var(--white);
+  box-shadow: none;
+  background-color: var(--green);
+}
+
+.btn-register:hover {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: transparent;
+  /* box-shadow: inset 0px 0px 0px 1px var(--black); */
+  color: var(--black);
+}
+
+.btn-register {
+  color: var(--white);
+  /* box-shadow: none; */
+  background-color: var(--red);
+}
+
+.btn-login:hover {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: transparent;
+  /* box-shadow: inset 0px 0px 0px 1px var(--black); */
+  color: var(--black);
+}
+
+.btn-login {
+  color: var(--white);
+  /* box-shadow: none; */
+  background-color: var(--green);
 }
