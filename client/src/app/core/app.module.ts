@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { AlbumComponent } from '../components/album/album.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { ProductComponent } from '../components/product/product.component';
+import { RatingComponent } from '../components/rating/rating.component';
 
 @NgModule({
-  declarations: [AppComponent, AlbumComponent, CartComponent, FooterComponent],
+  declarations: [AppComponent, AlbumComponent, CartComponent, FooterComponent, ProductComponent, RatingComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
