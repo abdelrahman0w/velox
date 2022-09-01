@@ -1,33 +1,61 @@
-<nav class="navbar sticky-top d-flex justify-content-between">
+<nav class="navbar navbar-expand-lg sticky-top d-flex justify-content-between">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="assets/images/full-logo.svg" alt="logo" width="155vh">
     </a>
-    <form class="d-flex" role="search">
-      <input class="form-control shadow-none me-2" type="search" placeholder="Search..." aria-label="Search">
-      <button class="btn btn-search">Search</button>
-    </form>
-    <ul class="nav navbar-nav flex-row">
-      <li class="nav-item me-3">
-        <a class="btn btn-register" href="#">
-          Register
-        </a>
-      </li>
-      <li class="nav-item me-3">
-        <a class="btn btn-login" href="#">
-          Login
-        </a>
-      </li>
-      <li class="nav-item me-3">
-        <a class="" href="#">
-          <app-cart [items]="items"></app-cart>
-        </a>
-      </li>
-      <!-- <li class="nav-item me-3">
-        <a class="" href="#">
-          <app-cart [items]="0"></app-cart>
-        </a>
-      </li> -->
-    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex ms-auto mb-3 mt-3 mb-lg-0 mt-lg-0" role="search">
+        <div class="input-group">
+          <input type="search" class="form-control shadow-none" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-search">
+            <span class="material-icons-outlined align-middle">
+              search
+            </span>
+            <span class="align-middle">
+              Search
+            </span>
+          </button>
+        </div>
+      </form>
+      <ul class="nav navbar-nav flex-row ms-auto mb-1 mb-lg-0">
+        <li class="nav-item me-3" *ngIf="!user">
+          <a class="btn btn-register" href="#">
+            Register
+          </a>
+        </li>
+        <li class="nav-item me-3" *ngIf="!user">
+          <a class="btn btn-login" href="#">
+            Login
+          </a>
+        </li>
+        <li class="nav-item dropdown me-3" *ngIf="user">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hello, {{username}}!
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">User</a></li>
+          </ul>
+        </li>
+        <li class="nav-item me-3" *ngIf="user">
+          <a class="" href="#">
+            <app-wishlist [items]="wish"></app-wishlist>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#">
+            <app-cart [items]="cart"></app-cart>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

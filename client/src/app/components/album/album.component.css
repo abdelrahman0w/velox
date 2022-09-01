@@ -28,6 +28,16 @@
   color: #000;
 }
 
+.btn-wished {
+  color: #fff;
+  background-color: var(--yellow);
+}
+
+.btn-wished:hover {
+  color: #fff;
+  background-color: var(--orange);
+}
+
 .btn-wish:hover {
   color: #fff;
   /* border: none; */

@@ -12,17 +12,11 @@
 }
 
 .btn-search {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  background-color: transparent;
-  box-shadow: inset 0px 0px 0px 1px var(--black);
-  color: var(--black)
+  background-color: var(--lighter-green);
+  color: var(--white)
 }
 
 .btn-search:hover {
-  color: var(--white);
-  box-shadow: none;
   background-color: var(--green);
 }
 

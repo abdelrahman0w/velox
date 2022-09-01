@@ -118,10 +118,24 @@ export class AlbumComponent implements OnInit {
       },
     },
   ];
-  items = 0;
+  cart = 0;
+  wishList: number[] = [];
+  // get number of elements in wishList
+  wish = this.wishList.length;
   decQuantity(id: number) {
     var foundIndex = this.allProducts.findIndex(prod => prod.id == id);
     this.allProducts[foundIndex].qty--;
-    this.items++;
+    this.cart++;
+  }
+  isInWishList(id: number) {
+    return this.wishList.includes(id);
+  }
+  addWish(id: number) {
+    this.wishList.push(id);
+    this.wish++;
+  }
+  removeWish(id: number) {
+    this.wishList = this.wishList.filter(prod => prod != id);
+    this.wish--;
   }
 }

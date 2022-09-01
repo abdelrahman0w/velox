@@ -12,6 +12,10 @@ export class HeaderComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
+  @Input() user: boolean = true;
+
+  @Input() username: string = "User";
+
   @Input() cart: number = 0;
 
   @Input() wish: number = 0;

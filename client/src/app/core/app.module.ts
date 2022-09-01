@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlbumComponent } from '../components/album/album.component';
 import { CartComponent } from '../components/cart/cart.component';
+import { WishlistComponent } from '../components/wishlist/wishlist.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { RatingComponent } from '../components/rating/rating.component';
 import { ProductComponent } from '../components/product/product.component';
@@ -16,6 +17,7 @@ import { HeaderComponent } from '../components/header/header.component';
     AppComponent,
     AlbumComponent,
     CartComponent,
+    WishlistComponent,
     FooterComponent,
     RatingComponent,
     ProductComponent,
