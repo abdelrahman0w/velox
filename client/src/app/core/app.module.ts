@@ -10,7 +10,15 @@ import { ProductComponent } from '../components/product/product.component';
 import { RatingComponent } from '../components/rating/rating.component';
 
 @NgModule({
-  declarations: [AppComponent, AlbumComponent, CartComponent, FooterComponent, CarouselComponent, ProductComponent, RatingComponent],
+  declarations: [
+    AppComponent,
+    AlbumComponent,
+    CartComponent,
+    FooterComponent,
+    RatingComponent,
+    ProductComponent, 
+    CarouselComponent
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

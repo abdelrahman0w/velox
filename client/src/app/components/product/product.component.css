@@ -1,0 +1,56 @@
+* {
+    border-radius: 0;
+}
+
+.thumbnail_images ul {
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.thumbnail_images ul li {
+    padding: .5rem;
+    border: 2px solid var(--white);
+    cursor: pointer;
+    transition: all 0.5s
+}
+
+.thumbnail_images ul li:hover {
+    border: 2px solid var(--black)
+}
+
+/* .main_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--white);
+    height: 25rem;
+    width: 100%;
+    overflow: hidden
+} */
+
+.btn {
+    background-color: var(--black);
+    border: 0;
+}
+
+.btn:hover {
+    background-color: var(--green);
+}
+
+.btn-wish {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 0px 1px var(--black);
+    color: #000;
+}
+
+.btn-wish:hover {
+    color: #fff;
+    /* border: none; */
+    box-shadow: none;
+    background-color: var(--yellow);
+}
