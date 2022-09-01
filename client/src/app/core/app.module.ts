@@ -8,6 +8,7 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { RatingComponent } from '../components/rating/rating.component';
 import { ProductComponent } from '../components/product/product.component';
 import { CarouselComponent } from '../components/carousel/carousel.component';
+import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CarouselComponent } from '../components/carousel/carousel.component';
     FooterComponent,
     RatingComponent,
     ProductComponent,
-    CarouselComponent
+    CarouselComponent,
+    CrumbNavComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
