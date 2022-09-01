@@ -8,6 +8,7 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { RatingComponent } from '../components/rating/rating.component';
 import { ProductComponent } from '../components/product/product.component';
 import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,8 +19,11 @@ import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
     ProductComponent,
     CrumbNavComponent
   ],
+
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
+
 })
-export class AppModule {}
+
+export class AppModule { }
