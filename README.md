@@ -16,6 +16,7 @@
 
 - [Velox](#velox)
   - [Description](#description)
+  - [Demo](#demo)
   - [Dependencies](#dependencies)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -28,6 +29,10 @@
 ## Description
 
 A full Stack e-commerce web application built with MEAN stack.
+
+## Demo
+
+[Demo](https://my-velox.web.app/)
 
 ## Dependencies
 
