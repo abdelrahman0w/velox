@@ -1,21 +1,25 @@
 ul.breadcrumb {
-  padding: 10px 16px;
+  padding: 1rem;
   list-style: none;
   background-color: var(--white);
 }
+
 ul.breadcrumb li {
   display: inline;
-  font-size: 18px;
+  font-size: 19px;
 }
-ul.breadcrumb li + li:before {
-  padding: 8px;
+
+ul.breadcrumb li+li:before {
+  padding: .5rem;
   color: var(--black);
   content: ">";
 }
+
 ul.breadcrumb li a {
   color: var(--light-blue);
   text-decoration: none;
 }
+
 ul.breadcrumb li a:hover {
   color: var(--dark-blue);
   text-decoration: underline;
