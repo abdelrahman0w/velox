@@ -11,6 +11,7 @@ import { ProductComponent } from '../components/product/product.component';
 import { CarouselComponent } from '../components/carousel/carousel.component';
 import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
 import { HeaderComponent } from '../components/header/header.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from '../components/header/header.component';
     ProductComponent,
     CarouselComponent,
     CrumbNavComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductPageComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
