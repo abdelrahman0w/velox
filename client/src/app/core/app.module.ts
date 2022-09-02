@@ -13,6 +13,7 @@ import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../components/home/home.component';
+import { routingComponents } from './app-routing.module';
 
 @NgModule({
   declarations: [
