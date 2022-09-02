@@ -15,9 +15,17 @@ connectDB;
 const endpoint = '/'
 
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/user');
+var authRouter = require('./routes/auth');
+var userRouter = require('./routes/user');
+var productRouter = require('./routes/product')
+var orderRouter = require('./routes/order')
+var cartRouter = require('./routes/cart')
 
 app.use(endpoint, indexRouter);
-// app.use(endpoint, usersRouter);
+app.use(endpoint, authRouter);
+app.use(endpoint, userRouter);
+app.use(endpoint, productRouter);
+app.use(endpoint, orderRouter);
+app.use(endpoint, cartRouter);
 
 module.exports = app;
