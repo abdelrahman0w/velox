@@ -7,7 +7,7 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 })
 export class HeaderComponent implements OnInit, OnChanges {
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
