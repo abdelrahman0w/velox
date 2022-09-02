@@ -33,4 +33,5 @@ import { HomeComponent } from '../components/home/home.component';
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }
