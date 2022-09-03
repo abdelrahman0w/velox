@@ -42,9 +42,9 @@ router.delete("/order/:id", authAdmin, async (req, res) => {
 });
 
 //GET USER ORDERS
-router.get("/order/:userId", Authorization, async (req, res) => {
+router.get("/order/:uid", Authorization, async (req, res) => {
     try {
-        const orders = await Order.find({ userId: req.params.userId });
+        const orders = await Order.find({ uid: req.params.uid });
         res.status(200).json(orders);
     } catch (err) {
         res.status(500).json(err);
