@@ -51,7 +51,7 @@ router.delete('/users/:id', Authorization, (req, res) => {
 })
 
 // GET ALL
-router.get('/users/', authAdmin, (req, res) => {
+router.get('/users', authAdmin, (req, res) => {
     res.contentType('application/json');
     User.find().then(
         (users) => {

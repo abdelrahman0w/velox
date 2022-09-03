@@ -52,7 +52,7 @@ router.get("/cart/find/:uid", Authorization, async (req, res) => {
 });
 
 //GET ALL
-router.get("/cart/", authAdmin, async (req, res) => {
+router.get("/cart", authAdmin, async (req, res) => {
     try {
         const carts = await Cart.find();
         res.status(200).json(carts);
