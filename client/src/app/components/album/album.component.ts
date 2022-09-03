@@ -8,7 +8,8 @@ import { AppComponent } from 'src/app/core/app.component';
 })
 export class AlbumComponent implements OnInit {
   allProducts: any[] = [];
-  cart = 0;
+  cartList: string[] = []
+  cart = this.cartList.length;
   wishList: string[] = [];
   wish = this.wishList.length;
 
@@ -19,6 +20,7 @@ export class AlbumComponent implements OnInit {
 
   decQuantity(_id: string) {
     var foundIndex = this.allProducts.findIndex(prod => prod._id == _id);
+    this.cartList.push(_id);
     this.allProducts[foundIndex].qty--;
     this.cart++;
   }
