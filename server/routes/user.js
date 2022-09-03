@@ -4,7 +4,7 @@ const crypto = require('crypto-js');
 const { verifyToken, Authorization, authAdmin } = require('../middleware/auth');
 const User = require('../models/User')
 
-// Edit
+// UPDATE
 router.put('/users/:id', Authorization, (req, res) => {
     res.contentType('application/json');
 
@@ -33,7 +33,7 @@ router.put('/users/:id', Authorization, (req, res) => {
     );
 });
 
-// Delete
+// DELETE
 router.delete('/users/:id', Authorization, (req, res) => {
     res.contentType('application/json');
 
@@ -50,7 +50,7 @@ router.delete('/users/:id', Authorization, (req, res) => {
     );
 })
 
-// Get
+// GET ALL
 router.get('/users/', authAdmin, (req, res) => {
     res.contentType('application/json');
     User.find().then(
@@ -62,7 +62,10 @@ router.get('/users/', authAdmin, (req, res) => {
             res.json(err);
         }
     );
-}).get('/users/:id', authAdmin, (req, res) => {
+});
+
+// GET USER
+router.get('/users/:id', authAdmin, (req, res) => {
     res.contentType('application/json');
 
     User.findById(req.params.id).then(
