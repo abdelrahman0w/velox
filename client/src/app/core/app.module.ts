@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../components/home/home.component';
 import { routingComponents } from './app-routing.module';
 import { CartPageComponent } from '../components/cart-page/cart-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { CartPageComponent } from '../components/cart-page/cart-page.component';
     HomeComponent,
     CartPageComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

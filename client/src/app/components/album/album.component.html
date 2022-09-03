@@ -74,7 +74,7 @@
                 </span>
                 <span class="align-middle"> Add to Cart</span>
               </a>
-              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="decQuantity(product.id)">
+              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="decQuantity(product.id).subscribe()">
                 <span class="material-icons-outlined align-middle fs-5">
                   shopping_cart
                 </span>

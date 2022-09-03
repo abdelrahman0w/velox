@@ -26,7 +26,17 @@ export class AlbumComponent implements OnInit {
     this.cart.push(this.allProducts[foundIndex]);
     this.items++;
     this.itemsEmitter.emit(this.items);
-    
+    return this.http.put('https://velox-api-abdelrahman0w.vercel.app/cart/63139096fc2cb72d05bb774b', 
+    {
+      "products": [
+        {
+          "_id": this.allProducts[foundIndex].id,
+          "qty": 1
+        }
+      ]
+    }, {
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
 
