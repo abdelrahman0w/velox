@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/core/products.service';
+import { AppComponent } from 'src/app/core/app.component';
+
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
@@ -8,29 +9,28 @@ import { ProductsService } from 'src/app/core/products.service';
 export class AlbumComponent implements OnInit {
   allProducts: any[] = [];
   cart = 0;
-  wishList: number[] = [];
-  // get number of elements in wishList
+  wishList: string[] = [];
   wish = this.wishList.length;
 
-  constructor(private prodsService: ProductsService) { }
+  constructor(private mainApp: AppComponent) { }
   ngOnInit(): void {
-    this.allProducts = this.prodsService.getProducts();
+    this.allProducts = this.mainApp.allProducts;
   }
 
-  decQuantity(id: number) {
-    var foundIndex = this.allProducts.findIndex(prod => prod.id == id);
+  decQuantity(_id: string) {
+    var foundIndex = this.allProducts.findIndex(prod => prod._id == _id);
     this.allProducts[foundIndex].qty--;
     this.cart++;
   }
-  isInWishList(id: number) {
-    return this.wishList.includes(id);
+  isInWishList(_id: string) {
+    return this.wishList.includes(_id);
   }
-  addWish(id: number) {
-    this.wishList.push(id);
+  addWish(_id: string) {
+    this.wishList.push(_id);
     this.wish++;
   }
-  removeWish(id: number) {
-    this.wishList = this.wishList.filter(prod => prod != id);
+  removeWish(_id: string) {
+    this.wishList = this.wishList.filter(prod => prod != _id);
     this.wish--;
   }
 }

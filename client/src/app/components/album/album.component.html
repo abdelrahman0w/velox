@@ -2,8 +2,13 @@
 <app-carousel></app-carousel> -->
 
 <div class="album py-5">
-  <div class="container">
+  <div class="container d-flex justify-content-center">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status" *ngIf="allProducts.length === 0">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+
       <div class="col-12" *ngFor="let product of allProducts">
         <div class="card text-center">
           <div class="labels">
@@ -26,13 +31,13 @@
               <span class="align-middle"> NEW</span>
             </span>
           </div>
-          <a href="product/{{product.id}}">
+          <a href="product/{{product._id}}">
             <div class="card-body">
               <img class="card-img img-fluid prod-img" [src]="product.image" />
             </div>
           </a>
           <div class="card-body mt-3">
-            <a href="product/{{product.id}}">
+            <a href="product/{{product._id}}">
               <h5 class="card-title" title="{{ product.title }}">
                 {{ (product.title.length>25) ? (product.title | slice:0:25) + '...' : (product.title) }}
               </h5>
@@ -54,15 +59,15 @@
               </h5>
             </div>
             <div class="d-flex justify-content-center">
-              <a class="btn btn-primary btn-block btn-wished me-3" *ngIf="isInWishList(product.id)"
-                (click)="removeWish(product.id)">
+              <a class="btn btn-primary btn-block btn-wished me-3" *ngIf="isInWishList(product._id)"
+                (click)="removeWish(product._id)">
                 <span class="material-icons-outlined align-middle fs-5">
                   favorite
                 </span>
                 <span class="align-middle"> Remove Item</span>
               </a>
-              <a class="btn btn-primary btn-block btn-wish me-3" *ngIf="!isInWishList(product.id)"
-                (click)="addWish(product.id)">
+              <a class="btn btn-primary btn-block btn-wish me-3" *ngIf="!isInWishList(product._id)"
+                (click)="addWish(product._id)">
                 <span class="material-icons-outlined align-middle fs-5">
                   favorite_border
                 </span>
@@ -74,7 +79,7 @@
                 </span>
                 <span class="align-middle"> Add to Cart</span>
               </a>
-              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="decQuantity(product.id)">
+              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="decQuantity(product._id)">
                 <span class="material-icons-outlined align-middle fs-5">
                   shopping_cart
                 </span>
