@@ -1,50 +1,79 @@
-<div class="container">
-    <div class="row" style="">
-        <!-- <div class="col-md-6">
-            <div class="d-flex flex-column justify-content-center">
-                <div class="main_image">
-                    <img src="assets/images/tmp/bx-slider1.jpg" id="main_product_image" width="350">
-                </div>
-                <div class="thumbnail_images mt-3">
-                    <ul id="thumbnail">
-                        <li class="d-flex justify-content-between me-3"><img onclick="changeImage(this)"
-                                src="assets/images/tmp/bx-slider1.jpg" width="70"></li>
-                        <li class="d-flex justify-content-between me-3"><img onclick="changeImage(this)"
-                                src="assets/images/tmp/bx-slider2.jpg" width="70"></li>
-                        <li class="d-flex justify-content-between me-3"><img onclick="changeImage(this)"
-                                src="assets/images/tmp/bx-slider3.jpg" width="70"></li>
-                        <li class="d-flex justify-content-between"><img onclick="changeImage(this)"
-                                src="assets/images/tmp/bx-slider4.jpg" width="70"></li>
-                    </ul>
-                </div>
+<section class="my-5">
+    <div class="container">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="labels">
+                <span class="new" *ngIf="prod.new">
+                    <span class="material-icons align-middle fs-6">
+                        add_circle
+                    </span>
+                    <span class="align-middle"> NEW</span>
+                </span>
+                <span class="discount" *ngIf="prod.discount">
+                    <span class="material-icons align-middle fs-6">
+                        discount
+                    </span>
+                    <span class="align-middle"> %{{ prod.discount }} OFF</span>
+                </span>
             </div>
-        </div> -->
-        <div class="col-md-6">
-            <div class="p-5 right-side">
-                <h3>IIlana</h3>
-                <div class="mt-2 pr-3 content">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua
-                    </p>
+            <div class="col-md-6 text-center">
+                <img class="mb-5 mb-md-0 img-fluid prod-img " [src]="prod.image" />
+            </div>
+            <div class="col-md-6">
+                <h3 class="fw-bold">{{ prod.title }}</h3>
+                <div class="fs-5 mb-3">
+                    <div class="mb-3">
+                        <app-rating [rating]="prod.rating.rate" [numRatings]="prod.rating.count"></app-rating>
+                    </div>
+                    <div class="mb-3" *ngIf="!prod.discount">
+                        <h5 class="card-text price">
+                            ${{ prod.price }}
+                        </h5>
+                    </div>
+                    <div class="mb-3" *ngIf="prod.discount">
+                        <h5 class="card-text text-decoration-line-through me-3 text-muted d-inline">
+                            <small>
+                                ${{ prod.price }}
+                            </small>
+                        </h5>
+                        <h5 class="card-text d-inline">
+                            ${{ prod.price - (prod.price * prod.discount / 100) | number: '1.1-2' }}
+                        </h5>
+                    </div>
                 </div>
-                <h3>$430.99</h3>
-                <app-rating></app-rating>
-                <div class="buttons d-flex flex-row mt-5 gap-3">
-                    <a class="btn btn-primary btn-block btn-wish me-3">
+                <div class="d-flex mb-3">
+                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                        style="max-width: 3rem" />
+                    <a class="btn btn-primary btn-block btn-wished me-3" *ngIf="isInWishList(prod.id)"
+                        (click)="removeWish(prod.id)">
+                        <span class="material-icons-outlined align-middle fs-5">
+                            favorite
+                        </span>
+                        <span class="align-middle"> Remove Item</span>
+                    </a>
+                    <a class="btn btn-primary btn-block btn-wish me-3" *ngIf="!isInWishList(prod.id)"
+                        (click)="addWish(prod.id)">
                         <span class="material-icons-outlined align-middle fs-5">
                             favorite_border
                         </span>
                         <span class="align-middle"> Add to Wishlist</span>
                     </a>
-                    <a class="btn btn-primary btn-block">
+                    <a class="btn btn-primary btn-block disabled" *ngIf="prod.qty === 0">
+                        <span class="material-icons-outlined align-middle fs-5">
+                            shopping_cart
+                        </span>
+                        <span class="align-middle"> Add to Cart</span>
+                    </a>
+                    <a class="btn btn-primary btn-block" *ngIf="prod.qty > 0" (click)="decQuantity(prod.id)">
                         <span class="material-icons-outlined align-middle fs-5">
                             shopping_cart
                         </span>
                         <span class="align-middle"> Add to Cart</span>
                     </a>
                 </div>
+                <p class="lead">
+                    {{ prod.description }}
+                </p>
             </div>
         </div>
     </div>
-</div>
+</section>

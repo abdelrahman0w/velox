@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router} from '@angular/router';
+import { ProductsService } from 'src/app/core/products.service';
 
 @Component({
   selector: 'app-product-page',
@@ -11,13 +12,13 @@ export class ProductPageComponent implements OnInit {
   public href: string = "";
   public prodID: string = "";
 
-  @Input() product: any;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private prodsService: ProductsService) { }
 
   ngOnInit(): void {
     this.href = this.router.url;
     this.prodID = this.href.substring(9);
   }
 
+  public product:any = this.prodsService.getProduct(parseInt(this.prodID));
 }
 
