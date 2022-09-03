@@ -28,13 +28,15 @@
           </div>
           <a href="product/{{product.id}}">
             <div class="card-body">
-                <img class="card-img img-fluid prod-img" [src]="product.image" />
+              <img class="card-img img-fluid prod-img" [src]="product.image" />
             </div>
-            </a>
+          </a>
           <div class="card-body mt-3">
-            <h5 class="card-title" title="{{ product.title }}">
-              {{ (product.title.length>25) ? (product.title | slice:0:25) + '...' : (product.title) }}
-            </h5>
+            <a href="product/{{product.id}}">
+              <h5 class="card-title" title="{{ product.title }}">
+                {{ (product.title.length>25) ? (product.title | slice:0:25) + '...' : (product.title) }}
+              </h5>
+            </a>
             <hr>
             <div class="d-flex justify-content-center mb-3" *ngIf="!product.discount">
               <h5 class="card-text price">
