@@ -1,4 +1,4 @@
-<app-header [user]="true" [username]="'Abdelrahman'" [cart]="cart" [wish]="wish"></app-header>
+<app-header [user]="true" [username]="'Abdelrahman'" [cart]="cart" [wish]="wish" (searchEmitter) = "search($event)"></app-header>
 <app-carousel></app-carousel>
 
 <div class="album py-5">

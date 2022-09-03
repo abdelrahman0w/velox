@@ -12,7 +12,7 @@ import { ProductComponent } from '../components/product/product.component';
 import { CarouselComponent } from '../components/carousel/carousel.component';
 import { CrumbNavComponent } from '../components/crumb-nav/crumb-nav.component';
 import { HeaderComponent } from '../components/header/header.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../components/home/home.component';
 import { routingComponents } from './app-routing.module';
 
@@ -35,7 +35,8 @@ import { routingComponents } from './app-routing.module';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

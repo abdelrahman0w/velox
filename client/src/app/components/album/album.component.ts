@@ -18,6 +18,11 @@ export class AlbumComponent implements OnInit {
     this.allProducts = this.mainApp.allProducts;
   }
 
+  search(value: string) {
+    this.allProducts = this.mainApp.allProducts.filter(prod => prod.title.toLowerCase().includes(value.toLowerCase()));
+    console.log(value);
+  }
+
   decQuantity(_id: string) {
     var foundIndex = this.allProducts.findIndex(prod => prod._id == _id);
     this.cartList.push(_id);
