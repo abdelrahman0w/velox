@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/core/products.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-product',
@@ -13,30 +14,38 @@ export class ProductComponent implements OnInit {
   public prodID: string = "";
   public prod: any = {};
 
-  constructor(private router: Router, private prodsService: ProductsService) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.href = this.router.url;
-    this.prodID = this.href.substring(9);
-    this.prod = this.prodsService.getProduct(parseInt(this.prodID));
+    this.prodID = this.href.split("/")[2];
+    let headers = new HttpHeaders();
+    this.http.get<any>('https://velox-api-abdelrahman0w.vercel.app/products/' + this.prodID, {
+      headers: headers
+    }).subscribe(data => {
+      this.prod = data;
+    });
   }
 
-  cart = 0;
-  wishList: number[] = [];
+  cartList: string[] = []
+  cart = this.cartList.length;
+  wishList: string[] = [];
   wish = this.wishList.length;
-  isInWishList(id: number) {
-    return this.wishList.includes(id);
-  }
-  decQuantity(id: number) {
+
+  decQuantity(_id: string) {
+    this.cartList.push(this.prod._id);
     this.prod.qty--;
     this.cart++;
   }
-  addWish(id: number) {
-    this.wishList.push(id);
+  isInWishList(_id: string) {
+    return this.wishList.includes(_id);
+  }
+  addWish(_id: string) {
+    this.wishList.push(_id);
     this.wish++;
   }
-  removeWish(id: number) {
-    this.wishList = this.wishList.filter(prod => prod != id);
+  removeWish(_id: string) {
+    this.wishList = this.wishList.filter(prod => prod != _id);
     this.wish--;
   }
 }
