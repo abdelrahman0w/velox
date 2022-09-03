@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from 'src/app/core/product';
 import { ProductsService } from 'src/app/core/products.service';
 @Component({
   selector: 'app-album',
@@ -6,30 +7,32 @@ import { ProductsService } from 'src/app/core/products.service';
   styleUrls: ['./album.component.css'],
 })
 export class AlbumComponent implements OnInit {
-  allProducts: any[] = [];
+  allProducts: IProduct[] = [];
   cart = 0;
-  wishList: number[] = [];
+  wishList: string[] = [];
   // get number of elements in wishList
   wish = this.wishList.length;
 
   constructor(private prodsService: ProductsService) { }
   ngOnInit(): void {
-    this.allProducts = this.prodsService.getProducts();
+    this.prodsService.getProducts().subscribe((data) => { this.allProducts = data; });
+    console.log(this.allProducts);
+    
   }
 
-  decQuantity(id: number) {
-    var foundIndex = this.allProducts.findIndex(prod => prod.id == id);
+  decQuantity(id: string) {
+    var foundIndex = this.allProducts.findIndex(prod => prod._id == id);
     this.allProducts[foundIndex].qty--;
     this.cart++;
   }
-  isInWishList(id: number) {
+  isInWishList(id: string) {
     return this.wishList.includes(id);
   }
-  addWish(id: number) {
+  addWish(id: string) {
     this.wishList.push(id);
     this.wish++;
   }
-  removeWish(id: number) {
+  removeWish(id: string) {
     this.wishList = this.wishList.filter(prod => prod != id);
     this.wish--;
   }

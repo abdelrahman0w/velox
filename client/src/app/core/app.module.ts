@@ -14,6 +14,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../components/home/home.component';
 import { routingComponents } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { routingComponents } from './app-routing.module';
     routingComponents,
     HomeComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
