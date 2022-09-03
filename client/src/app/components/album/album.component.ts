@@ -6,7 +6,7 @@ import { ProductsService } from 'src/app/core/products.service';
   styleUrls: ['./album.component.css'],
 })
 export class AlbumComponent implements OnInit {
-  allProducts:any[] = [];
+  allProducts: any[] = [];
   cart = 0;
   wishList: number[] = [];
   // get number of elements in wishList
@@ -15,7 +15,7 @@ export class AlbumComponent implements OnInit {
   constructor(private prodsService: ProductsService) { }
   ngOnInit(): void {
     this.allProducts = this.prodsService.getProducts();
-   }
+  }
 
   decQuantity(id: number) {
     var foundIndex = this.allProducts.findIndex(prod => prod.id == id);
