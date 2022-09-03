@@ -9,7 +9,7 @@ import { IProduct } from './product';
 export class ProductsService {
 
   constructor(private http: HttpClient) { }
-  endpoint: string = "https://velox-api-abdelrahman0w.vercel.app/products";
+  endpoint: string = "../assets/products.json";
   Products: any[] = [];
 
   getProducts(): Observable<IProduct[]> {
@@ -17,7 +17,8 @@ export class ProductsService {
     // return this.Products;
   }
 
-  getProduct(id: number) {
-    return this.Products.find((p) => p.id === id);
-  }
+  // getProduct(id: string) {
+  //   return this.http.get<IProduct[]>(this.endpoint).;
+  //   return this.Products.find((p) => p.id === id);
+  // }
 }

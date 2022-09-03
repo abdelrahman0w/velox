@@ -18,7 +18,9 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.href = this.router.url;
     this.prodID = this.href.substring(9);
-    this.prod = this.prodsService.getProduct(parseInt(this.prodID));
+    this.prodsService.getProducts().subscribe((data) => {
+      this.prod = data.find((p) => p._id === this.prodID);
+    } );
   }
 
   cart = 0;
