@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlbumComponent } from '../components/album/album.component';
@@ -14,6 +15,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../components/home/home.component';
 import { routingComponents } from './app-routing.module';
+import { CartPageComponent } from '../components/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { routingComponents } from './app-routing.module';
     CrumbNavComponent,
     HeaderComponent,
     routingComponents,
-    HomeComponent
+    HomeComponent,
+    CartPageComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

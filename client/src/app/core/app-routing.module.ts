@@ -9,12 +9,14 @@ import { LoginComponent } from '../components/login/login.component';
 import { ProductComponent } from '../components/product/product.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { HomeComponent } from '../components/home/home.component';
+import { CartPageComponent } from '../components/cart-page/cart-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'product/:id', component: ProductComponent },
+  { path: 'cart', component: CartPageComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

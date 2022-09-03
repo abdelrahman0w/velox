@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+ 
+  items: number = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  updateItems(items: number) {
+    this.items = items;
+  }
 }

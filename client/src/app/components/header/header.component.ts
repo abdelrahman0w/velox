@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit, OnChanges {
 
   @Input() username: string = "User";
 
-  @Input() cart: number = 0;
+  @Input() items: number = 0;
 
   @Input() wish: number = 0;
 
