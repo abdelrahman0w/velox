@@ -12,6 +12,19 @@ export class AppComponent {
   title = 'client';
   allProducts: any[] = [];
 
+  // cart: any = {};
+  // cartProducts: any[] = [];
+
+  newProduct: any = {
+    "productID": "ADDED",
+    "qty": 1
+  };
+
+  cartList: string[] = [];
+  cart = this.cartList.length;
+  wishList: string[] = [];
+  wish = this.wishList.length;
+
   ngOnInit() {
     let headers = new HttpHeaders();
 
@@ -24,5 +37,21 @@ export class AppComponent {
         this.allProducts.push(product);
       }
     });
+
+    // this.http.get<any>('https://velox-api-abdelrahman0w.vercel.app/cart/find/cart', {
+    //   headers: headers
+    // }).subscribe(data => {
+    //   this.cart = data;
+    //   this.cartProducts = this.cart.products;
+    //   this.cartProducts.push(this.newProduct);
+    //   this.cart.products = this.cartProducts;
+
+    //   this.http.put<any>('https://velox-api-abdelrahman0w.vercel.app/cart/63139096fc2cb72d05bb774b', this.cart, {
+    //     headers: headers
+    //   }).subscribe(data => {
+    //     console.log(data);
+    //   });
+    // });
+
   }
 }
