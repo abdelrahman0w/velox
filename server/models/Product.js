@@ -32,6 +32,10 @@ const productSchema = mongoose.Schema(
         },
         discount: {
             type: Number
+        },
+        rating: {
+            type: Map,
+            of: Number
         }
     },
     { timestamps: true }

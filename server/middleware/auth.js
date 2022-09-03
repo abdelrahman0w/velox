@@ -31,4 +31,15 @@ const Authorization = (req, res, next) => {
     });
 }
 
-module.exports = { verifyToken, Authorization };
+const authAdmin = (req, res, next) => {
+    verifyToken(req, res, () => {
+        if (req.user.isAdmin) {
+            next();
+        }
+        else {
+            res.status(401).json('You are not authorized!');
+        }
+    });
+}
+
+module.exports = { verifyToken, Authorization, authAdmin };

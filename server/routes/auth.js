@@ -11,7 +11,6 @@ dotenv.config();
 router.post('/auth/register', (req, res, next) => {
     const newUser = User({
         username: req.body.username,
-        email: req.body.email,
         password: crypto.AES.encrypt(req.body.password, process.env.PASSPHRASE)
     })
 
@@ -19,8 +18,7 @@ router.post('/auth/register', (req, res, next) => {
         res.json(
             {
                 message: 'User Registered Successfully!',
-                username: req.body.username,
-                email: req.body.email
+                username: req.body.username
             }
         )
     ).catch(
@@ -28,7 +26,7 @@ router.post('/auth/register', (req, res, next) => {
             res.json(err)
         }
     );
-})
+});
 
 // login
 router.post('/auth/login', (req, res, next) => {
@@ -54,7 +52,6 @@ router.post('/auth/login', (req, res, next) => {
                     res.json({
                         message: 'User logged in successfully!',
                         username: user.username,
-                        email: user.email,
                         accessToken
                     })
                 } else {
