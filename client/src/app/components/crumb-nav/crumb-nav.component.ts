@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-crumb-nav',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crumb-nav.component.css']
 })
 export class CrumbNavComponent implements OnInit {
+
+  // @Input() crumbs: string[] = [];
+
+  @Input() crnt: string = '';
 
   constructor() { }
 

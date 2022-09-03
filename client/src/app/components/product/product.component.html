@@ -1,5 +1,7 @@
 <app-header [user]="false"></app-header>
 
+<app-crumb-nav [crnt]="prod.title"></app-crumb-nav>
+
 <section class="my-5">
     <div class="container">
         <div class="row gx-4 gx-lg-5 align-items-center">
@@ -10,7 +12,13 @@
                     </span>
                     <span class="align-middle"> NEW</span>
                 </span>
-                <span class="discount" *ngIf="prod.discount">
+                <span class="discount" *ngIf="!prod.new && prod.discount">
+                    <span class="material-icons align-middle fs-6">
+                        discount
+                    </span>
+                    <span class="align-middle"> %{{ prod.discount }} OFF</span>
+                </span>
+                <span class="discount" *ngIf="prod.new && prod.discount" style="left: .3rem">
                     <span class="material-icons align-middle fs-6">
                         discount
                     </span>
@@ -43,8 +51,8 @@
                     </div>
                 </div>
                 <div class="d-flex mb-3">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
-                        style="max-width: 3rem" />
+                    <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1"
+                        style="max-width: 5rem" min="1" max="{{prod.qty}}" />
                     <a class="btn btn-primary btn-block btn-wished me-3" *ngIf="isInWishList(prod.id)"
                         (click)="removeWish(prod.id)">
                         <span class="material-icons-outlined align-middle fs-5">

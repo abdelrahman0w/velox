@@ -1,5 +1,6 @@
 ul.breadcrumb {
   padding: 1rem;
+  padding-left: 7rem;
   list-style: none;
   background-color: var(--black);
   color: var(--white);
