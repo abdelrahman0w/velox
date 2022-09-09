@@ -1,0 +1,33 @@
+* {
+    border-radius: 0;
+}
+
+.card {
+    width: 100%;
+    background: var(--red);
+    border: none;
+    color: #fff;
+    height: 19rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    /* height: 75vh; */
+}
+
+.card h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.card span {
+    font-size: 25px;
+}
+
+.code {
+    background-color: var(--black);
+    padding: 3px;
+}

@@ -1,0 +1,12 @@
+* {
+    border-radius: 0;
+    color: var(--white);
+}
+
+.newsletter {
+    background-color: var(--black);
+}
+
+.btn-subscribe {
+    background-color: var(--green);
+}

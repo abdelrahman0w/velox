@@ -1,8 +1,18 @@
-<app-header [user]="true" [username]="'Abdelrahman'" [cart]="cart" [wish]="wish"></app-header>
+<app-header [user]="true" [username]="'User'" [cart]="cart" [wish]="wish"></app-header>
 
-<app-crumb-nav [crnt]="prod.title"></app-crumb-nav>
+<app-categories-bar></app-categories-bar>
 
-<section class="my-5">
+<span style="text-transform: capitalize;" *ngIf="prod.title">
+    <app-crumb-nav [crnt]="prod.title" [cat]="prod.category" [href]="link"></app-crumb-nav>
+</span>
+
+<div class="loading text-center mt-5">
+    <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status" *ngIf="!prod.title">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<section class="my-5" *ngIf="prod.title">
     <div class="container">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="labels">

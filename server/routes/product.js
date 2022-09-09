@@ -76,5 +76,16 @@ router.get("/products", async (req, res) => {
     }
 });
 
+// Search
+router.get("/products/find/:search", async (req, res) => {
+    try {
+        const found = await Product.find(
+            { title: { "$regex": req.params.search, "$options": "i" } }
+        );
+        res.status(200).json(found);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;

@@ -1,0 +1,32 @@
+* {
+    border-radius: 0;
+}
+
+.navbar {
+    background-color: var(--black);
+}
+
+.nav-link {
+    color: var(--white);
+}
+
+.nav-link:hover {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.nav-link.active {
+    color: var(--white);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.navbar-toggler {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.navbar-toggler.navbar-toggler-icon {
+    color: var(--white);
+    background-color: var(--white);
+}

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AppComponent } from 'src/app/core/app.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-album',
@@ -13,9 +13,45 @@ export class AlbumComponent implements OnInit {
   wishList: string[] = [];
   wish = this.wishList.length;
 
-  constructor(private mainApp: AppComponent) { }
+  @Input('cat') cat: string = '';
+  @Input('search') search: string = '';
+
+  constructor(private http: HttpClient) { }
   ngOnInit(): void {
-    this.allProducts = this.mainApp.allProducts;
+    let headers = new HttpHeaders();
+
+    if (this.cat.length != 0) {
+      this.http.get<any>('https://velox-api-abdelrahman0w.vercel.app/products', {
+        headers: headers
+      }).subscribe(data => {
+        let products = data;
+        for (let i = 0; i < products.length; i++) {
+          let product = products[i];
+          this.allProducts.push(product);
+          this.allProducts = this.allProducts.filter(prod => prod.category == this.cat);
+        }
+      });
+    } else if (this.search.length != 0) {
+      this.http.get<any>('https://velox-api-abdelrahman0w.vercel.app/products/find/' + this.search, {
+        headers: headers
+      }).subscribe(data => {
+        let products = data;
+        for (let i = 0; i < products.length; i++) {
+          let product = products[i];
+          this.allProducts.push(product);
+        }
+      });
+    } else {
+      this.http.get<any>('https://velox-api-abdelrahman0w.vercel.app/products', {
+        headers: headers
+      }).subscribe(data => {
+        let products = data;
+        for (let i = 0; i < products.length; i++) {
+          let product = products[i];
+          this.allProducts.push(product);
+        }
+      });
+    }
   }
 
   decQuantity(_id: string) {

@@ -8,17 +8,18 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex ms-auto mb-3 mt-3 mb-lg-0 mt-lg-0" role="search">
+      <form class="d-flex ms-auto mb-3 mt-3 mb-lg-0 mt-lg-0" id="searchForm" [action]="url">
         <div class="input-group">
-          <input type="search" class="form-control shadow-none" placeholder="Search..." aria-label="Search">
-          <button class="btn btn-search">
+          <input [(ngModel)]="search" type="text" id="srch" name="search" class="form-control shadow-none"
+            placeholder="Search..." aria-label="Search">
+          <a class="btn btn-search" onclick="this.href='search/'+document.getElementById('srch').value" type="submit">
             <span class="material-icons-outlined align-middle">
               search
             </span>
             <span class="align-middle">
               Search
             </span>
-          </button>
+          </a>
         </div>
       </form>
       <ul class="nav navbar-nav flex-row ms-auto mb-1 mb-lg-0">

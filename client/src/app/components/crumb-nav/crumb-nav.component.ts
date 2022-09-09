@@ -7,13 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CrumbNavComponent implements OnInit {
 
-  // @Input() crumbs: string[] = [];
-
+  @Input() cat: string = '';
   @Input() crnt: string = '';
+  @Input() href: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

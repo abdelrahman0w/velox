@@ -9,6 +9,9 @@ export class HeaderComponent implements OnInit, OnChanges {
 
   constructor() { }
 
+  search: string = ''
+  url: string = 'search/' + this.search;
+
   ngOnInit(): void {
   }
 

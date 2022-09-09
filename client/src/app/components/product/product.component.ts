@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductsService } from 'src/app/core/products.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
@@ -13,6 +12,7 @@ export class ProductComponent implements OnInit {
   public href: string = "";
   public prodID: string = "";
   public prod: any = {};
+  link: string = '';
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -24,6 +24,15 @@ export class ProductComponent implements OnInit {
       headers: headers
     }).subscribe(data => {
       this.prod = data;
+
+      let categoriesMap: { [key: string]: string } = {
+        "women's clothing": 'women',
+        "men's clothing": 'men',
+        'jewelery': "jewelery",
+        'electronics': "electronics"
+      }
+
+      this.link = categoriesMap[this.prod.category]
     });
   }
 

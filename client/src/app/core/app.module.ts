@@ -15,6 +15,14 @@ import { HeaderComponent } from '../components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../components/home/home.component';
 import { routingComponents } from './app-routing.module';
+import { CategoriesBarComponent } from '../components/categories-bar/categories-bar.component';
+import { DealsComponent } from '../components/deals/deals.component';
+import { CategoriesCardsComponent } from '../components/categories-cards/categories-cards.component';
+import { NewsletterComponent } from '../components/newsletter/newsletter.component';
+import { SingleCatComponent } from '../components/single-cat/single-cat.component';
+import { NotFoundComponent } from '../components/not-found/not-found.component';
+import { SearchResultsComponent } from '../components/search-results/search-results.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,13 +37,21 @@ import { routingComponents } from './app-routing.module';
     CrumbNavComponent,
     HeaderComponent,
     routingComponents,
-    HomeComponent
+    HomeComponent,
+    CategoriesBarComponent,
+    DealsComponent,
+    CategoriesCardsComponent,
+    NewsletterComponent,
+    SingleCatComponent,
+    NotFoundComponent,
+    SearchResultsComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
