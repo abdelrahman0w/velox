@@ -2,6 +2,15 @@
 <app-categories-bar></app-categories-bar>
 <app-carousel></app-carousel> -->
 
+<div *ngIf="scs" id="snackbar" class="btn btn-added sticky-top top-50" (click)="scs = false">
+  <span class="material-icons-outlined align-middle">
+    check_circle
+  </span>
+  <span class="align-middle">
+    ADDED
+  </span>
+</div>
+
 <div class="album py-5" *ngIf="allProducts.length === 0">
   <div class="container d-flex justify-content-center">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -86,7 +95,7 @@
                 </span>
                 <span class="align-middle"> Add to Cart</span>
               </a>
-              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="decQuantity(product._id)">
+              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="add(product)">
                 <span class="material-icons-outlined align-middle fs-5">
                   shopping_cart
                 </span>
@@ -174,7 +183,7 @@
                 </span>
                 <span class="align-middle"> Add to Cart</span>
               </a>
-              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="decQuantity(product._id)">
+              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="add(product)">
                 <span class="material-icons-outlined align-middle fs-5">
                   shopping_cart
                 </span>
@@ -262,7 +271,7 @@
                 </span>
                 <span class="align-middle"> Add to Cart</span>
               </a>
-              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="decQuantity(product._id)">
+              <a class="btn btn-primary btn-block" *ngIf="product.qty > 0" (click)="add(product)">
                 <span class="material-icons-outlined align-middle fs-5">
                   shopping_cart
                 </span>

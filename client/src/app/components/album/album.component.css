@@ -45,6 +45,11 @@
   background-color: var(--yellow);
 }
 
+.btn-added {
+  color: #fff;
+  background-color: var(--green);
+}
+
 .discount,
 .new {
   position: absolute;

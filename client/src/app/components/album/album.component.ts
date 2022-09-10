@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AlbumComponent implements OnInit {
   allProducts: any[] = [];
-  cartList: string[] = []
+  cartList: any[] = [];
   cart = this.cartList.length;
   wishList: string[] = [];
   wish = this.wishList.length;
@@ -52,14 +52,49 @@ export class AlbumComponent implements OnInit {
         }
       });
     }
+
+    this.loadCart();
+  }
+
+  scs: boolean = false;
+  showSuccess() {
+    setTimeout(() => {
+      this.scs = true;
+    }, 1000);
+    this.scs = false;
+  }
+
+  loadCart() {
+    this.cartList = JSON.parse(localStorage.getItem('cart_items') as any) || [];
+  }
+
+  saveCart() {
+    localStorage.setItem('cart_items', JSON.stringify(this.cartList))
+  }
+
+  inCart(prod: any) {
+    return this.cartList.findIndex((x: any) => x._id === prod._id) > -1;
+  }
+
+  add(prod: any) {
+    this.showSuccess();
+    if (!this.inCart(prod)) {
+      prod.qty = 1;
+      this.cartList.push(prod);
+      this.saveCart();
+    }
   }
 
   decQuantity(_id: string) {
     var foundIndex = this.allProducts.findIndex(prod => prod._id == _id);
-    this.cartList.push(_id);
-    this.allProducts[foundIndex].qty--;
+    var tempQty = this.allProducts[foundIndex].qty;
+    this.allProducts[foundIndex].qty = 1;
+    this.cartList.push(this.allProducts[foundIndex]);
+    this.saveCart();
+    this.allProducts[foundIndex].qty = tempQty - 1;
     this.cart++;
   }
+
   isInWishList(_id: string) {
     return this.wishList.includes(_id);
   }

@@ -23,6 +23,7 @@ import { SingleCatComponent } from '../components/single-cat/single-cat.componen
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { SearchResultsComponent } from '../components/search-results/search-results.component';
 import { FormsModule } from '@angular/forms';
+import { CartPageComponent } from '../components/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FormsModule } from '@angular/forms';
     NewsletterComponent,
     SingleCatComponent,
     NotFoundComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    CartPageComponent
   ],
   imports: [
     HttpClientModule,

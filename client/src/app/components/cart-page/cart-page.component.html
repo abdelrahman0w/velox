@@ -1,0 +1,111 @@
+<app-header [user]="true" [username]="'User'"></app-header>
+<app-categories-bar></app-categories-bar>
+
+<!-- <div class="container mt-5 text-center text-white" *ngIf="items.length === 0">
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Checkout Success!</h4>
+                <p>Thank you for shopping with us.</p>
+                <hr>
+                <p class="mb-0">We hope to see you again soon.</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Checkout Success!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for shopping with us.</p>
+                <p>We hope to see you again soon.</p>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <a href="/" class="btn btn-home">Go Home!</a>
+                <button type="button" class="btn btn-dismiss" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of items; let ind = index" [attr.data-index]="ind">
+                            <th scope="row">{{ ind + 1 }}</th>
+                            <td>
+                                <img [src]="item.image" style="height: 5rem; width: auto;">
+                            </td>
+                            <td>{{ item.title }}</td>
+                            <td class="qty">
+                                <div class="cntrl" (click)="incQuantity(item._id)">+</div>
+                                {{ item.qty }}
+                                <div class="cntrl" (click)="decQuantity(item._id)">-</div>
+                            </td>
+                            <td *ngIf="!item.discount">${{ item.price }}</td>
+                            <td *ngIf="item.discount">
+                                <small class="text-decoration-line-through me-1 text-muted">
+                                    ${{ item.price | number: '1.1-2' }}
+                                </small>
+                                ${{ item.price - (item.price * item.discount / 100) | number: '1.1-2' }}
+                            </td>
+                            <td *ngIf="!item.discount">${{ item.qty * item.price }}</td>
+                            <td *ngIf="item.discount">
+                                <small class="text-decoration-line-through me-1 text-muted">
+                                    ${{ item.qty * item.price | number: '1.1-2' }}
+                                </small>
+                                ${{ item.qty * item.price - ((item.qty * item.price) * item.discount / 100) | number:
+                                '1.1-2' }}
+                            </td>
+                            <td>
+                                <span class="del material-icons-outlined" (click)="removeItem(item._id)">
+                                    delete_outline
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <div class="d-flex flex-column align-items-center">
+                    <h5 class="text-muted">Total</h5>
+                    <h4 class="text-muted">${{ total | number: '1.1-2' }}</h4>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button *ngIf="items.length != 0" class="btn btn-primary w-100" (click)="checkout()" type="button"
+                    data-bs-toggle="modal" data-bs-target="#modal">Checkout</button>
+                <button *ngIf="items.length === 0" class="btn btn-primary w-100 disabled"
+                    type="button">Checkout</button>
+            </div>
+            <div class="d-flex justify-content-center mt-1">
+                <button *ngIf="items.length != 0" class="btn btn-dismiss w-100" type="button"
+                    (click)="clearCart()">Clear Cart</button>
+                <button *ngIf="items.length === 0" class="btn btn-dismiss w-100 disabled" type="button">Clear
+                    Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

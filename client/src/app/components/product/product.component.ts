@@ -34,6 +34,46 @@ export class ProductComponent implements OnInit {
 
       this.link = categoriesMap[this.prod.category]
     });
+
+    this.loadCart();
+  }
+
+  scs: boolean = false;
+  showSuccess() {
+    setTimeout(() => {
+      this.scs = true;
+    }, 1000);
+    this.scs = false;
+  }
+
+  loadCart() {
+    this.cartList = JSON.parse(localStorage.getItem('cart_items') as any) || [];
+  }
+
+  saveCart() {
+    localStorage.setItem('cart_items', JSON.stringify(this.cartList))
+  }
+
+  inCart(prod: any) {
+    return this.cartList.findIndex((x: any) => x._id === prod._id) > -1;
+  }
+
+  removeProd(prod: any) {
+    var ind = this.cartList.findIndex((x: any) => x._id === prod.id);
+
+    if (ind > -1) {
+      this.cartList.splice(ind, 1);
+      this.saveCart()
+    }
+  }
+
+  add(prod: any) {
+    this.showSuccess();
+    if (!this.inCart(prod)) {
+      prod.qty = 1;
+      this.cartList.push(prod);
+      this.saveCart();
+    }
   }
 
   cartList: string[] = []

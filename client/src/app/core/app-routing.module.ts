@@ -6,12 +6,14 @@ import { RegisterComponent } from '../components/register/register.component';
 import { HomeComponent } from '../components/home/home.component';
 import { SingleCatComponent } from '../components/single-cat/single-cat.component';
 import { SearchResultsComponent } from '../components/search-results/search-results.component';
+import { CartPageComponent } from '../components/cart-page/cart-page.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'cart', component: CartPageComponent },
   { path: 'categories/:cat', component: SingleCatComponent },
   { path: 'product/:id', component: ProductComponent },
   { path: 'search/:search', component: SearchResultsComponent },

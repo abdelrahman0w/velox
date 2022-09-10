@@ -4,6 +4,7 @@
 
 .navbar {
     background-color: var(--black);
+    z-index: 1;
 }
 
 .nav-link {

@@ -6,6 +6,15 @@
     <app-crumb-nav [crnt]="prod.title" [cat]="prod.category" [href]="link"></app-crumb-nav>
 </span>
 
+<div *ngIf="scs" id="snackbar" class="btn btn-added sticky-top top-50" (click)="scs = false">
+    <span class="material-icons-outlined align-middle">
+        check_circle
+    </span>
+    <span class="align-middle">
+        ADDED
+    </span>
+</div>
+
 <div class="loading text-center mt-5">
     <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status" *ngIf="!prod.title">
         <span class="visually-hidden">Loading...</span>
@@ -61,8 +70,8 @@
                     </div>
                 </div>
                 <div class="d-flex mb-3">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1"
-                        style="max-width: 5rem" min="1" max="{{prod.qty}}" />
+                    <!-- <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1"
+                        style="max-width: 5rem" min="1" max="{{prod.qty}}" /> -->
                     <a class="btn btn-primary btn-block btn-wished me-3" *ngIf="isInWishList(prod.id)"
                         (click)="removeWish(prod.id)">
                         <span class="material-icons-outlined align-middle fs-5">
@@ -83,7 +92,7 @@
                         </span>
                         <span class="align-middle"> Add to Cart</span>
                     </a>
-                    <a class="btn btn-primary btn-block" *ngIf="prod.qty > 0" (click)="decQuantity(prod.id)">
+                    <a class="btn btn-primary btn-block" *ngIf="prod.qty > 0" (click)="add(prod)">
                         <span class="material-icons-outlined align-middle fs-5">
                             shopping_cart
                         </span>

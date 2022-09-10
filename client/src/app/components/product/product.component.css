@@ -11,6 +11,11 @@
     background-color: var(--green);
 }
 
+.btn-added {
+    color: #fff;
+    background-color: var(--green);
+}
+
 .btn-wish {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
